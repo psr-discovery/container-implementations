@@ -112,7 +112,7 @@ If you wish to prefer a specific implementation over others, you can `prefer()` 
 use PsrDiscovery\Discover;
 use PsrDiscovery\Implementations\Psr11\Containers;
 
-// Prefer the a specific implementation of PSR-14 over others.
+// Prefer the a specific implementation of PSR-11 over others.
 Containers::prefer('league/container');
 
 // Return an instance of League\Container\Container,
@@ -133,7 +133,7 @@ If you wish to force a specific implementation and ignore the rest of the discov
 use PsrDiscovery\Discover;
 use PsrDiscovery\Implementations\Psr11\Containers;
 
-// Only discover a specific implementation of PSR-14.
+// Only discover a specific implementation of PSR-11.
 Containers::use('league/container');
 
 // Return an instance of League\Container\Container,
