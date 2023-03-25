@@ -13,10 +13,10 @@ use PsrDiscovery\Implementations\Implementation;
 
 final class Containers extends Implementation implements ContainersContract
 {
-    private static ?CandidatesCollection $candidates           = null;
-    private static ?CandidatesCollection   $extendedCandidates = null;
-    private static ?ContainerInterface $singleton              = null;
-    private static ?ContainerInterface $using                  = null;
+    private static ?CandidatesCollection $candidates         = null;
+    private static ?CandidatesCollection $extendedCandidates = null;
+    private static ?ContainerInterface   $singleton          = null;
+    private static ?ContainerInterface   $using              = null;
 
     public static function add(CandidateEntity $candidate): void
     {
