@@ -24,7 +24,7 @@ Successful discovery requires the presence of a compatible implementation in the
 
 ## Implementations
 
-The discovery of available implementations is based on [a list of well-known libraries](https://packagist.org/providers/psr/container-implementation) that support the `psr/container-implementation` interface. These include:
+The following `psr/container-implementation` implementations are discovered and instantiated automatically:
 
 -   [aura/di](https://github.com/auraphp/Aura.Di) ^4.0
 -   [contributte/psr11-container-interface](https://github.com/contributte/psr11-container-interface) ^0.4
