@@ -26,18 +26,18 @@ Successful discovery requires the presence of a compatible implementation in the
 
 The discovery of available implementations is based on [a list of well-known libraries](https://packagist.org/providers/psr/container-implementation) that support the `psr/container-implementation` interface. These include:
 
--   [laravel/framework](https://github.com/laravel/framework) ^7.0 | ^8.0 | ^9.0 | ^10.0
+-   [aura/di](https://github.com/auraphp/Aura.Di) ^4.0
+-   [contributte/psr11-container-interface](https://github.com/contributte/psr11-container-interface) ^0.4
 -   [illuminate/container](https://github.com/illuminate/container) ^8.0 | ^9.0 | ^10.0
+-   [joomla/di](https://github.com/joomla-framework/di) ^1.5 | ^2.0
+-   [laminas/laminas-servicemanager](https://github.com/laminas/laminas-servicemanager) ^3.3
+-   [laravel/framework](https://github.com/laravel/framework) ^7.0 | ^8.0 | ^9.0 | ^10.0
+-   [league/container](https://github.com/thephpleague/container) ^3.0 | ^4.0
+-   [php-di/php-di](https://github.com/PHP-DI/PHP-DI) ^5.4.2 | ^6.0 | ^7.0
+-   [silverstripe/framework](https://github.com/silverstripe/silverstripe-framework) ^4.0
 -   [symfony/dependency-injection](https://github.com/symfony/dependency-injection) ^3.3 | ^4.0 | ^5.0 | ^6.0
 -   [symfony/symfony](https://github.com/symfony/symfony) ^3.3 | ^4.0 | ^5.0 | ^6.0
--   [league/container](https://github.com/thephpleague/container) ^3.0 | ^4.0
--   [laminas/laminas-servicemanager](https://github.com/laminas/laminas-servicemanager) ^3.3
--   [php-di/php-di](https://github.com/PHP-DI/PHP-DI) ^5.4.2 | ^6.0 | ^7.0
 -   [yiisoft/di](https://github.com/yiisoft/di) ^1.0
--   [silverstripe/framework](https://github.com/silverstripe/silverstripe-framework) ^4.0
--   [aura/di](https://github.com/auraphp/Aura.Di) ^4.0
--   [joomla/di](https://github.com/joomla-framework/di) ^1.5 | ^2.0
--   [contributte/psr11-container-interface](https://github.com/contributte/psr11-container-interface) ^0.4
 
 The following mock implementations are also available:
 
