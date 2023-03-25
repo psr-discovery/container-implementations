@@ -13,14 +13,30 @@ use PsrDiscovery\Implementations\Implementation;
 
 final class Containers extends Implementation implements ContainersContract
 {
-    private static ?CandidatesCollection $candidates = null;
-    private static ?ContainerInterface $singleton    = null;
-    private static ?ContainerInterface $using        = null;
+    private static ?CandidatesCollection $candidates           = null;
+    private static ?CandidatesCollection   $extendedCandidates = null;
+    private static ?ContainerInterface $singleton              = null;
+    private static ?ContainerInterface $using                  = null;
 
     public static function add(CandidateEntity $candidate): void
     {
         parent::add($candidate);
         self::use(null);
+    }
+
+    /**
+     * @psalm-suppress MixedInferredReturnType,MixedReturnStatement
+     */
+    public static function allCandidates(): CandidatesCollection
+    {
+        if (null !== self::$extendedCandidates) {
+            return self::$extendedCandidates;
+        }
+
+        self::$extendedCandidates = CandidatesCollection::create();
+        self::$extendedCandidates->set(self::candidates());
+
+        return self::$extendedCandidates;
     }
 
     /**
@@ -125,6 +141,11 @@ final class Containers extends Implementation implements ContainersContract
         }
 
         return Discover::container();
+    }
+
+    public static function discoveries(): array
+    {
+        return Discover::containers();
     }
 
     public static function prefer(string $package): void
