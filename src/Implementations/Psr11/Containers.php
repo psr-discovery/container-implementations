@@ -13,10 +13,13 @@ use PsrDiscovery\Implementations\Implementation;
 
 final class Containers extends Implementation implements ContainersContract
 {
-    private static ?CandidatesCollection $candidates         = null;
+    private static ?CandidatesCollection $candidates = null;
+
     private static ?CandidatesCollection $extendedCandidates = null;
-    private static ?ContainerInterface   $singleton          = null;
-    private static ?ContainerInterface   $using              = null;
+
+    private static ?ContainerInterface   $singleton = null;
+
+    private static ?ContainerInterface   $using = null;
 
     public static function add(CandidateEntity $candidate): void
     {
@@ -29,7 +32,7 @@ final class Containers extends Implementation implements ContainersContract
      */
     public static function allCandidates(): CandidatesCollection
     {
-        if (null !== self::$extendedCandidates) {
+        if (self::$extendedCandidates instanceof \PsrDiscovery\Collections\CandidatesCollection) {
             return self::$extendedCandidates;
         }
 
@@ -44,7 +47,7 @@ final class Containers extends Implementation implements ContainersContract
      */
     public static function candidates(): CandidatesCollection
     {
-        if (null !== self::$candidates) {
+        if (self::$candidates instanceof \PsrDiscovery\Collections\CandidatesCollection) {
             return self::$candidates;
         }
 
@@ -136,7 +139,7 @@ final class Containers extends Implementation implements ContainersContract
      */
     public static function discover(): ?ContainerInterface
     {
-        if (null !== self::$using) {
+        if (self::$using instanceof \Psr\Container\ContainerInterface) {
             return self::$using;
         }
 
@@ -164,7 +167,7 @@ final class Containers extends Implementation implements ContainersContract
 
     public static function singleton(): ?ContainerInterface
     {
-        if (null !== self::$using) {
+        if (self::$using instanceof \Psr\Container\ContainerInterface) {
             return self::$using;
         }
 
@@ -174,6 +177,6 @@ final class Containers extends Implementation implements ContainersContract
     public static function use(?ContainerInterface $instance): void
     {
         self::$singleton = $instance;
-        self::$using     = $instance;
+        self::$using = $instance;
     }
 }
