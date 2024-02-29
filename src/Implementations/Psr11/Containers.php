@@ -73,13 +73,13 @@ final class Containers extends Implementation implements ContainersContract
 
         self::$candidates->add(CandidateEntity::create(
             package: 'symfony/symfony',
-            version: '^3.3 | ^4.0 | ^5.0 | ^6.0',
+            version: '^3.3 | ^4.0 | ^5.0 | ^6.0 | ^7.0',
             builder: static fn (string $class = '\Symfony\Component\DependencyInjection\Container'): object => new $class(),
         ));
 
         self::$candidates->add(CandidateEntity::create(
             package: 'symfony/dependency-injection',
-            version: '^3.3 | ^4.0 | ^5.0 | ^6.0',
+            version: '^3.3 | ^4.0 | ^5.0 | ^6.0 | ^7.0',
             builder: static fn (string $class = '\Symfony\Component\DependencyInjection\Container'): object => new $class(),
         ));
 
