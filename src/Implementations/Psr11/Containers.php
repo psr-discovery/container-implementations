@@ -32,7 +32,7 @@ final class Containers extends Implementation implements ContainersContract
      */
     public static function allCandidates(): CandidatesCollection
     {
-        if (self::$extendedCandidates instanceof \PsrDiscovery\Collections\CandidatesCollection) {
+        if (self::$extendedCandidates instanceof CandidatesCollection) {
             return self::$extendedCandidates;
         }
 
@@ -47,7 +47,7 @@ final class Containers extends Implementation implements ContainersContract
      */
     public static function candidates(): CandidatesCollection
     {
-        if (self::$candidates instanceof \PsrDiscovery\Collections\CandidatesCollection) {
+        if (self::$candidates instanceof CandidatesCollection) {
             return self::$candidates;
         }
 
@@ -139,7 +139,7 @@ final class Containers extends Implementation implements ContainersContract
      */
     public static function discover(): ?ContainerInterface
     {
-        if (self::$using instanceof \Psr\Container\ContainerInterface) {
+        if (self::$using instanceof ContainerInterface) {
             return self::$using;
         }
 
@@ -167,7 +167,7 @@ final class Containers extends Implementation implements ContainersContract
 
     public static function singleton(): ?ContainerInterface
     {
-        if (self::$using instanceof \Psr\Container\ContainerInterface) {
+        if (self::$using instanceof ContainerInterface) {
             return self::$using;
         }
 
