@@ -61,7 +61,7 @@ final class Containers extends Implementation implements ContainersContract
 
         self::$candidates->add(CandidateEntity::create(
             package: 'laravel/framework',
-            version: '^7.0 | ^8.0 | ^9.0 | ^10.0',
+            version: '^7.0 | ^8.0 | ^9.0 | ^10.0 | ^11.0',
             builder: static fn (string $class = '\Illuminate\Container\Container'): object => new $class(),
         ));
 
